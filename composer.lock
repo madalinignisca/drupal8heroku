@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5f21b950ecffa5f67c85851657fd2afa",
-    "content-hash": "950845bf1b022dfd5c06b32d9f98ae46",
+    "hash": "5e217289d33972be7cedf25d61be4b84",
+    "content-hash": "eb08214c35424c4914b97cb3dba97bd0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -732,6 +732,52 @@
             "time": "2014-09-09 13:34:57"
         },
         {
+            "name": "drupal/adminimal_theme",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/adminimal_theme",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/adminimal_theme-8.x-1.1.zip",
+                "reference": null,
+                "shasum": "7c0db056d41e902810a4c147c74ddbeda41add76"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1449335039"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "ANDiTKO",
+                    "homepage": "https://www.drupal.org/user/1428124"
+                },
+                {
+                    "name": "realityloop",
+                    "homepage": "https://www.drupal.org/user/139189"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/adminimal_theme",
+            "support": {
+                "source": "http://cgit.drupalcode.org/adminimal_theme"
+            }
+        },
+        {
             "name": "drupal/composer_deploy",
             "version": "1.0.0-beta1",
             "source": {
@@ -742,7 +788,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/composer_deploy-8.x-1.0-beta1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta1",
                 "shasum": "34ec828160d1cf414c138f00c379308384cadf32"
             },
             "require": {

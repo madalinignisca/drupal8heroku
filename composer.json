@@ -24,7 +24,8 @@
         "drupal/core": "~8.2",
         "drupal/console": "~1.0",
         "drupal/drupal-library-installer-plugin": "^0.3.0",
-        "drupal/composer_deploy": "^1.0"
+        "drupal/composer_deploy": "^1.0",
+        "drupal/adminimal_theme": "~1.1"
     },
     "require-dev": {
       "heroku/heroku-buildpack-php": "*",
