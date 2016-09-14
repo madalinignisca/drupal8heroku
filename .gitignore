@@ -9,9 +9,5 @@ web/profiles/contrib
 web/sites/*/files
 web/sites/*/private
 
-# Ignore sites settings and services
-web/sites/*/settings.php
-web/sites/*/services.yml
-
 # Local files
 web/sites/*/local.settings.php
