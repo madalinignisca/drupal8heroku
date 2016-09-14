@@ -734,3 +734,7 @@ $databases['default']['default'] = array(
    'port' => $heroku_db['port'],
    'prefix' => '',
 );
+
+$config_directories = array(
+   CONFIG_SYNC_DIRECTORY => '../config',
+);
