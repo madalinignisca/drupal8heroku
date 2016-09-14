@@ -34,13 +34,13 @@
     },
     "extra": {
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "web/profiles/{$name}": ["type:drupal-profile"]
+            "app/core": ["type:drupal-core"],
+            "app/modules/contrib/{$name}": ["type:drupal-module"],
+            "app/themes/contrib/{$name}": ["type:drupal-theme"],
+            "app/profiles/{$name}": ["type:drupal-profile"]
         },
         "drupal-libraries": {
-            "library-directory": "web/libraries",
+            "library-directory": "app/libraries",
             "libraries": [ ]
         }
     }
