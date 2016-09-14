@@ -6,7 +6,8 @@ web/themes/contrib
 web/profiles/contrib
 
 # Ignore Drupal's file directory
-web/sites/*/files
+web/sites/*/files/*
+!web/sites/default/files/.gitkeep
 web/sites/*/private
 
 # Local files
