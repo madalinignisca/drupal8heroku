@@ -738,3 +738,44 @@ $databases['default']['default'] = array(
 $config_directories = array(
    CONFIG_SYNC_DIRECTORY => '../config',
 );
+
+$settings['flysystem'] = [
+  'public' => [
+    'driver' => 's3',
+    'config' => [
+      'key'    => getenv('AWS_KEY'),      // 'key' and 'secret' do not need to be
+      'secret' => getenv('AWS_SECRET'),   // provided if using IAM roles.
+      'region' => getenv('AWS_REGION'),
+      'bucket' => getenv('AWS_S3_BUCKET'),
+
+      // Optional configuration settings.
+
+      'options' => [
+        'ACL' => 'public-read',
+        // 'StorageClass' => 'REDUCED_REDUNDANCY',
+      ],
+
+      'protocol' => 'https',                   // Autodetected based on the
+                                                  // current request if not
+                                                  // provided.
+
+      // 'prefix' => 'an/optional/prefix',        // Directory prefix for all
+                                                  // uploaded/viewed files.
+
+      // 'cname' => 'static.example.com',         // A CNAME that resolves to
+                                                  // your bucket. Used for URL
+                                                  // generation.
+
+      // 'cname_is_bucket' => TRUE,               // Set to FALSE if the CNAME
+                                                  // does not resolve to a
+                                                  // bucket and the bucuket
+                                                  // should be included in the
+                                                  // path.
+
+      // 'endpoint' => 'https://api.example.com', // An alternative API endpoint
+                                                  // for 3rd party S3 providers.
+    ],
+
+    'cache' => TRUE, // Creates a metadata cache to speed up lookups.
+  ],
+];
