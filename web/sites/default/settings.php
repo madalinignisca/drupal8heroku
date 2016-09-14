@@ -723,6 +723,8 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  */
 $heroku_db = parse_url(getenv("DATABASE_URL"));
 
+var_dump($heroku_db); die();
+
 $databases['default']['default'] = array(
    'driver' => $heroku_db['scheme'] == 'postgres' ? 'pgsql' : 'mysql',
    'database' => substr($heroku_db['path'], 1),
