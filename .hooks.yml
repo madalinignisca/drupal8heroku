@@ -1,0 +1,27 @@
+# Used by environments like DevShop
+# install, deploy, verify, test and sync are indexes based on common convention.
+# This is just an example and you must personalize it to your needs.
+
+# Fires after an environment is installed.
+install: |
+  drush {{alias}} vset site_name "Hooks Hooks Hooks"
+
+# Fires after code is deployed. A "deployment" happens when you push to your
+# git repository or select a new branch or tag for your environment.
+deploy: |
+  drush {{alias}} updb -y
+  drush {{alias}} cc all #drupal 7
+  drush {{alias}} cr #drupal 8
+
+# Fires after "verify" task.
+verify: |
+  drush {{alias}} status
+
+# Fires after "Run Tests" task.
+test: |
+  drush {{alias}} uli
+
+
+# Fires after "Deploy Data (Sync)" task.
+sync: |
+  drush {{alias}} en devel -y
