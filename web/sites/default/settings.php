@@ -718,6 +718,8 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 #   include __DIR__ . '/settings.local.php';
 # }
 
+$settings['hash_salt'] = 'd41d8cd98f00b204e9800998ecf8427e';
+
 /**
  * Heroku parse DATABASE_URL
  */
