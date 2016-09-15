@@ -738,7 +738,7 @@ $databases['default']['default'] = array(
 $config_directories = array(
    CONFIG_SYNC_DIRECTORY => '../config',
 );
-
+/*
 $settings['flysystem'] = [
   'public' => [
     'driver' => 's3',
@@ -779,3 +779,4 @@ $settings['flysystem'] = [
     'cache' => TRUE, // Creates a metadata cache to speed up lookups.
   ],
 ];
+*/
