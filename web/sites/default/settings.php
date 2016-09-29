@@ -740,7 +740,7 @@ $config_directories = array(
 );
 /*
 $settings['flysystem'] = [
-  'public' => [
+  'pub' => [
     'driver' => 's3',
     'config' => [
       'key'    => getenv('AWS_KEY'),      // 'key' and 'secret' do not need to be
