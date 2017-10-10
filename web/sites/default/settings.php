@@ -735,6 +735,18 @@ $databases['default']['default'] = array(
    'prefix' => '',
 );
 
+/**
+ * Heroku parse REDIS_URL
+ */
+$heroku_redis = parse_url(getenv("REDIS_URL"));
+
+$settings['redis.connection']['interface'] = 'PhpRedis'; // Can be "Predis".
+$settings['redis.connection']['host']      = $heroku_redis['host'];  // Your Redis instance hostname.
+$settings['redis.connection']['port']      = $heroku_redis['port'];
+$settings['redis.connection']['password']  = $heroku_redis['pass'];
+$settings['cache']['default'] = 'cache.backend.redis';
+$settings['container_yamls'][] = 'modules/redis/example.services.yml';
+
 $config_directories = array(
    CONFIG_SYNC_DIRECTORY => '../config',
 );
