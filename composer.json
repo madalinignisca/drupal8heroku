@@ -20,6 +20,7 @@
     "require": {
         "php": "^5.5.9 || ^7.0",
         "ext-gd": "*",
+        "ext-redis": "*",
         "composer/installers": "^1.0.20",
         "drupal/core": "~8.2",
         "drupal/console": "~1.0",
