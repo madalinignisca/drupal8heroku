@@ -723,29 +723,35 @@ $settings['hash_salt'] = 'd41d8cd98f00b204e9800998ecf8427e';
 /**
  * Heroku parse DATABASE_URL
  */
-$heroku_db = parse_url(getenv("DATABASE_URL"));
-
-$databases['default']['default'] = array(
-   'driver' => $heroku_db['scheme'] == 'postgres' ? 'pgsql' : 'mysql',
-   'database' => substr($heroku_db['path'], 1),
-   'username' => $heroku_db['user'],
-   'password' => $heroku_db['pass'],
-   'host' => $heroku_db['host'],
-   'port' => $heroku_db['port'],
-   'prefix' => '',
-);
+if (isset($_ENV['DATABASE_URL'])) {
+  $heroku_db = parse_url(getenv("DATABASE_URL"));
+  
+  $databases['default']['default'] = array(
+    'driver' => $heroku_db['scheme'] == 'postgres' ? 'pgsql' : 'mysql',
+    'database' => substr($heroku_db['path'], 1),
+    'username' => $heroku_db['user'],
+    'password' => $heroku_db['pass'],
+    'host' => $heroku_db['host'],
+    'port' => $heroku_db['port'],
+    'prefix' => '',
+  );
+} else {
+  die("Please add the Heroku Postgresql instance to the app!");
+}
 
 /**
  * Heroku parse REDIS_URL
  */
-$heroku_redis = parse_url(getenv("REDIS_URL"));
+if (isset($_ENV['REDIS_URL'])) {
+  $heroku_redis = parse_url(getenv("REDIS_URL"));
 
-$settings['redis.connection']['interface'] = 'PhpRedis'; // Can be "Predis".
-$settings['redis.connection']['host']      = $heroku_redis['host'];  // Your Redis instance hostname.
-$settings['redis.connection']['port']      = $heroku_redis['port'];
-$settings['redis.connection']['password']  = $heroku_redis['pass'];
-$settings['cache']['default'] = 'cache.backend.redis';
-$settings['container_yamls'][] = 'modules/redis/example.services.yml';
+  $settings['redis.connection']['interface'] = 'PhpRedis'; // Can be "Predis".
+  $settings['redis.connection']['host']      = $heroku_redis['host'];  // Your Redis instance hostname.
+  $settings['redis.connection']['port']      = $heroku_redis['port'];
+  $settings['redis.connection']['password']  = $heroku_redis['pass'];
+  $settings['cache']['default'] = 'cache.backend.redis';
+  $settings['container_yamls'][] = 'modules/redis/example.services.yml';
+}
 
 $config_directories = array(
    CONFIG_SYNC_DIRECTORY => '../config',
