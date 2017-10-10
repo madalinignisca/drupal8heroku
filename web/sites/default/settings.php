@@ -791,3 +791,7 @@ $settings['flysystem'] = [
     'cache' => TRUE, // Creates a metadata cache to speed up lookups.
   ],
 ];
+
+$settings['trusted_host_patterns'] = array(
+  '^drupal8demo\.herokuapp\.com/$',
+);
