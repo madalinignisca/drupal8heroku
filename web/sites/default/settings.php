@@ -799,5 +799,5 @@ $settings['flysystem'] = [
 ];
 
 $settings['trusted_host_patterns'] = array(
-  '^drupal8demo\.herokuapp\.com/$',
+  '^drupal8demo\.herokuapp\.com$',
 );
